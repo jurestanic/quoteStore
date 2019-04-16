@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/quoteTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Quote"
+        android:inputType="textCapSentences"
+        android:layout_marginTop="15dp"/>
+
+    <EditText
+        android:id="@+id/authorTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Author"
+        android:inputType="textCapWords"
+        />
+
+    <com.pchmn.materialchips.ChipsInput
+        app:maxRows="1"
+        app:showChipDetailed="false"
+        android:layout_marginStart="4dp"
+        android:id="@+id/chips_input"
+        android:layout_below="@+id/authorTxt"
+        android:ems="10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:hint="Tag"
+        app:chip_deletable="true"/>
+
+    <com.google.android.material.chip.Chip
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/chips_input"
+        android:text="Tag"
+        style="@style/Widget.MaterialComponents.Chip.Entry"/>
+
+
+</LinearLayout>

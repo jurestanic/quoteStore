@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "150068220737",
+    "firebase_url": "https://quotestore-3617d.firebaseio.com",
+    "project_id": "quotestore-3617d",
+    "storage_bucket": "quotestore-3617d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:150068220737:android:13becdffed8c71a8",
+        "android_client_info": {
+          "package_name": "com.jurestanic.quotestore"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "150068220737-aqbg77fd86cj1crb0dhu8spt6952538r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.jurestanic.quotestore",
+            "certificate_hash": "60fe28573781ce62f358664bfb0c25d2e72b48b5"
+          }
+        },
+        {
+          "client_id": "150068220737-ht087i2kcufpue4lkpt5ipf6uf2hdllm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0AN9S27ot2CGBIxKUjbxJb_mS5dYnzxE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "150068220737-ht087i2kcufpue4lkpt5ipf6uf2hdllm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
