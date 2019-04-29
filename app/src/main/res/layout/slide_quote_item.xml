@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <RelativeLayout
+        android:id="@+id/quoteBox"
+        android:layout_width="341dp"
+        android:layout_height="371dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:padding="10dp">
+
+        <EditText
+            android:id="@+id/slideQuoteTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:scrollbars="vertical"
+            android:text="Quote"
+            android:textAlignment="center"
+            android:textSize="25dp" />
+
+        <EditText
+            android:id="@+id/slideAuthorTxt"
+            android:textAlignment="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/slideQuoteTxt"
+            android:layout_centerHorizontal="true"
+            android:background="@android:color/transparent"
+            android:clickable="true"
+            android:text="Author"
+            android:textSize="15dp" />
+
+    </RelativeLayout>
+
+
+
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/deleteFab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_toRightOf="@+id/shareFab"
+        android:layout_below="@+id/quoteBox"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="15dp"
+        android:clickable="true"
+        app:srcCompat="@drawable/ic_delete_black_24dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/editFab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_toLeftOf="@+id/shareFab"
+        android:layout_below="@+id/quoteBox"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="50dp"
+        app:srcCompat="@drawable/ic_edit_black_24dp"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/shareFab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/quoteBox"
+        android:layout_marginTop="50dp"
+        android:clickable="true"
+        app:srcCompat="@drawable/ic_share" />
+
+
+</RelativeLayout>

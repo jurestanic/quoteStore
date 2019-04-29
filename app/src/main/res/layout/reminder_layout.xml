@@ -4,25 +4,95 @@
     android:layout_height="match_parent"
     android:background="@color/jureBlue">
 
+    <TextView
+        android:id="@+id/reminderSetTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="30dp"
+        android:textSize="20dp"
+        android:text="REMINDER SET FOR" />
+
+    <TextView
+        android:id="@+id/setTimeTxt"
+        android:layout_below="@id/reminderSetTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:textSize="50dp"
+        android:text="@string/timeString" />
+
+    <TextView
+        android:id="@+id/withTag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/reminderBtn"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="66dp"
+        android:layout_marginTop="49dp"
+        android:text="TAG : "
+        android:textSize="20dp" />
+
+    <Spinner
+        android:id="@+id/tagSpinner"
+        android:layout_width="205dp"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@id/saveBtn"
+        android:layout_alignBottom="@id/withTag"
+        android:layout_marginLeft="18dp"
+        android:layout_marginBottom="0dp"
+        android:layout_toRightOf="@id/withTag" />
+
+    <TextView
+        android:id="@+id/withAuthor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/withTag"
+        android:layout_marginStart="66dp"
+        android:layout_marginTop="32dp"
+        android:text="AUTHOR : "
+        android:textSize="20dp" />
+
+    <Spinner
+        android:id="@+id/authorSpinner"
+        android:layout_width="173dp"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@id/tagSpinner"
+        android:layout_alignBottom="@id/withTag"
+        android:layout_marginLeft="50dp"
+        android:layout_marginBottom="-58dp"
+        android:layout_toRightOf="@id/withTag" />
+
 
     <Button
         android:id="@+id/reminderBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:layout_width="274dp"
+        android:layout_height="58dp"
+        android:layout_below="@id/setTimeTxt"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="173dp"
-        android:text="set a time" />
+        android:layout_marginTop="40dp"
+        android:text="set new time" />
 
-        <Button
-            android:id="@+id/cancelBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="128dp"
-            android:layout_marginBottom="275dp"
-            android:text="cancel reminder" />
+    <Button
+        android:id="@+id/saveBtn"
+        android:layout_below="@id/withAuthor"
+        android:layout_width="274dp"
+        android:layout_height="58dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="75dp"
+        android:text="save" />
+
+    <Button
+        android:id="@+id/cancelBtn"
+        android:layout_width="274dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/saveBtn"
+        android:layout_alignStart="@+id/reminderBtn"
+        android:layout_marginTop="9dp"
+        android:text="cancel reminder" />
+
 
 
 

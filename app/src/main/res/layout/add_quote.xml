@@ -6,6 +6,7 @@
     android:layout_height="match_parent">
 
     <EditText
+        android:focusedByDefault="true"
         android:id="@+id/quoteTxt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -23,7 +24,7 @@
         android:inputType="textCapWords"
         />
 
-    <com.pchmn.materialchips.ChipsInput
+    <com.jurestanic.quotestore.MyChipsInput
         app:maxRows="1"
         app:showChipDetailed="false"
         android:layout_marginStart="4dp"
@@ -34,13 +35,6 @@
         android:layout_height="wrap_content"
         app:hint="Tag"
         app:chip_deletable="true"/>
-
-    <com.google.android.material.chip.Chip
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/chips_input"
-        android:text="Tag"
-        style="@style/Widget.MaterialComponents.Chip.Entry"/>
 
 
 </LinearLayout>

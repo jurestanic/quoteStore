@@ -1,6 +1,5 @@
 package com.jurestanic.quotestore;
 
-import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.Exclude;
 
 public class Quote {
@@ -17,7 +16,7 @@ public class Quote {
 
     }
 
-    public Quote(String quote, String author, String quoteID, String tag) {
+    Quote(String quote, String author, String quoteID, String tag) {
         this.quote = quote;
         this.author = author;
         this.quoteID = quoteID;
@@ -33,16 +32,6 @@ public class Quote {
         this.quoteID = quoteID;
     }
 
-    @Exclude
-    public boolean isSelected() {
-        return isSelected;
-    }
-
-    @Exclude
-    public void setSelected(boolean selected) {
-        isSelected = selected;
-    }
-
     public String getQuote() {
         return quote;
     }
@@ -52,7 +41,7 @@ public class Quote {
     }
 
     @Exclude
-    public boolean getIsSelected() {
+    boolean getIsSelected() {
         return isSelected;
     }
 
@@ -65,7 +54,7 @@ public class Quote {
     }
 
     @Exclude
-    public void setIsSelected(boolean b) {
+    void setIsSelected(boolean b) {
         isSelected = b;
     }
 
@@ -73,7 +62,7 @@ public class Quote {
         this.quote = quote;
     }
 
-    public void setAuthor(String author) {
+    public  void setAuthor(String author) {
         this.author = author;
     }
 }
