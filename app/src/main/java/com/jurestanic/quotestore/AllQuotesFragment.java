@@ -51,6 +51,11 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 
 public class AllQuotesFragment extends Fragment {
@@ -85,6 +90,31 @@ public class AllQuotesFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("http://quotes.rest/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        QuotesApi quotesApi = retrofit.create(QuotesApi.class);
+        Call<ApiQuote> call = quotesApi.getApiQuotes();
+        call.enqueue(new Callback<ApiQuote>() {
+            @Override
+            public void onResponse(Call<ApiQuote> call, Response<ApiQuote> response) {
+                ApiQuote q = response.body();
+                System.out.println(q);
+                Quote quotePrep = new Quote();
+                quotePrep.setQuote(q.getContents().getQuotes()[0].getQuote());
+                quotePrep.setAuthor(q.getContents().getQuotes()[0].getAuthor());
+                quotePrep.setTag(q.getContents().getQuotes()[0].getTags()[0]);
+                quoteList.add(quotePrep);
+                }
+            @Override
+            public void onFailure(Call<ApiQuote> call, Throwable t) {
+                System.out.println(t.getMessage());
+                Toast.makeText(getContext(),t.getMessage(),Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
     @Override
@@ -122,7 +152,7 @@ public class AllQuotesFragment extends Fragment {
 
         // Ako je aplikacija vec pokrenuta ne dohvacaju se podaci sa servera nego iz MainActivitya
         if(MainActivity.loaded) {
-            quoteList = MainActivity.quoteList;
+           // quoteList = MainActivity.quoteList;
             buildRecycleView();
         }
 

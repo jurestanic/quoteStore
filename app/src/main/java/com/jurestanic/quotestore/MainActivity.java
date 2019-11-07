@@ -35,7 +35,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     // potrebno za punjenje podataka kada se pristupa podacima iz
     // navbara (kako ne bi vazda hvatali podatke sa servera -> pogledati u DataFetcher primjenu kao i u HomeFragmentu(onCreate))
     public static ArrayList<Quote> quoteList;
+    public static Quote qod;
     public static boolean loaded;
+
+    public ActionBarDrawerToggle toggle;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +53,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         // omogucava otvaranje nav drawera i animaciju hamburger icona.
         drawer = findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawer,toolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
+        toggle = new ActionBarDrawerToggle(this,drawer,toolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
@@ -65,6 +70,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         // stavaranje homeFragmenta i dohvacanje podataka sa servera
         HomeFragment hf = new HomeFragment();
         new DataFetcher(db, hf);
+
 
         // stavlja homeFragment za pocetni fragment kada se udje u app.
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
@@ -100,9 +106,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         TagFragment tf = new TagFragment();
         Bundle bundle = new Bundle();
-
-
-
         switch (menuItem.getItemId()){
             case R.id.nav_home:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
@@ -160,4 +163,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+
 }

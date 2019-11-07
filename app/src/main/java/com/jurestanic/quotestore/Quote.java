@@ -1,12 +1,14 @@
 package com.jurestanic.quotestore;
 
 import com.google.firebase.database.Exclude;
+import com.google.gson.annotations.SerializedName;
 
 public class Quote {
 
-    private String quote;
-    private String author;
+    private String Quote;
+    private String Author;
     private String quoteID;
+    @SerializedName("Tags")
     private String tag;
 
     @Exclude
@@ -17,8 +19,8 @@ public class Quote {
     }
 
     Quote(String quote, String author, String quoteID, String tag) {
-        this.quote = quote;
-        this.author = author;
+        this.Quote = quote;
+        this.Author = author;
         this.quoteID = quoteID;
         this.tag = tag;
     }
@@ -33,11 +35,11 @@ public class Quote {
     }
 
     public String getQuote() {
-        return quote;
+        return Quote;
     }
 
     public String getAuthor() {
-        return author;
+        return Author;
     }
 
     @Exclude
@@ -59,10 +61,10 @@ public class Quote {
     }
 
     public void setQuote(String quote) {
-        this.quote = quote;
+        this.Quote = quote;
     }
 
     public  void setAuthor(String author) {
-        this.author = author;
+        this.Author = author;
     }
 }
